@@ -1,0 +1,249 @@
+@use 'colors' as *;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+}
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #333131;
+}
+
+.container {
+	width: 350px;
+	height: 700px;
+	&__background {
+		width: 100%;
+		height: 33%;
+		background-image: url('../images/bg-main-mobile.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+	&__card {
+		width: 280px;
+		height: 150px;
+		border-radius: 10px;
+		z-index: 999;
+		position: absolute;
+		top: 130px;
+		left: 15px;
+		background-image: url(../images/bg-card-front.png);
+		background-size: cover;
+		padding: 20px;
+	}
+	&__card-logo {
+		height: 30px;
+		width: auto;
+	}
+	&__card-number {
+		color: white;
+		font-size: 18px;
+		font-weight: 500;
+		letter-spacing: 1.5px;
+		padding-top: 30px;
+	}
+	&__card-data {
+		display: flex;
+		color: white;
+		font-size: 9px;
+		letter-spacing: 1px;
+		padding-top: 0;
+		justify-content: space-between;
+		padding-top: 15px;
+		font-weight: 400;
+	}
+	&__backcard {
+		width: 280px;
+		height: 150px;
+		border-radius: 5px;
+		position: absolute;
+		background-size: cover;
+		background-repeat: no-repeat;
+		top: 44px;
+		right: 15px;
+		background-image: url('../images/bg-card-back.png');
+	}
+	&__backcard-cvc {
+		position: absolute;
+		top: 70px;
+		right: 35px;
+		color: white;
+		font-size: 10px;
+		font-weight: 300;
+		letter-spacing: 1px;
+	}
+	&__text-area {
+		background-color: white;
+		width: 100%;
+		height: 67%;
+		padding: 25px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__success {
+		padding-top: 80px;
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__success-image {
+		padding-top: 30px;
+		width: 70px;
+	}
+	&__success-header {
+		margin-top: 50px;
+		font-size: 30px;
+		letter-spacing: 3px;
+	}
+	&__success-paragraph {
+		margin-top: 30px;
+		color: rgb(129, 123, 123);
+	}
+	&__form {
+		padding-top: 50px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__form-header {
+		font-size: 12px;
+		letter-spacing: 1px;
+		font-weight: 500;
+		margin-top: 20px;
+	}
+	&__form-input {
+		margin-top: 5px;
+		border: 1px solid rgb(219, 212, 212);
+		padding: 13px;
+		border-radius: 10px;
+		color: black;
+		font-weight: 500;
+		&::placeholder {
+			font-size: 17px;
+			color: rgb(129, 123, 123);
+		}
+		&:focus {
+			border-color: $outlinecolor;
+		}
+		&--smaller {
+			width: 68px;
+		}
+		&--cvc {
+			width: 100%;
+		}
+		&.invalid {
+			border: 1px solid red !important;
+		}
+	}
+	&__form-error {
+		color: red;
+		font-size: 9px;
+		margin-top: 3px;
+	}
+	&__date-cvc {
+		display: flex;
+		margin-top: 20px;
+	}
+	&__date,
+	&__cvc {
+		width: 50%;
+	}
+	&__confirm-button {
+		border: 0;
+		border-radius: 10px;
+		padding: 15px;
+		width: 100%;
+		color: white;
+		background-color: $outlinecolor;
+		margin-top: 25px;
+		font-size: 18px;
+		font-weight: 500;
+	}
+}
+
+@media screen and (min-width: 1350px) {
+	.container {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		&__background {
+			height: 100%;
+			width: 33%;
+			background-image: url('../images/bg-main-desktop.png');
+		}
+		&__card {
+			width: 447px;
+			height: 245px;
+			top: 25vh;
+			left: 10vw;
+			padding: 30px;
+		}
+		&__card-logo {
+			height: 40px;
+		}
+		&__card-number {
+			font-size: 25px;
+			letter-spacing: 2.5px;
+			padding-top: 70px;
+		}
+		&__card-data {
+			font-size: 12px;
+			letter-spacing: 2px;
+			padding-top: 30px;
+		}
+		&__backcard {
+			width: 447px;
+			height: 245px;
+			top: 55vh;
+			left: 18vw;
+		}
+		&__backcard-cvc {
+			top: 114px;
+			right: 55px;
+			font-size: 12px;
+			letter-spacing: 2px;
+		}
+		&__text-area {
+			width: 67%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding-left: 200px;
+		}
+		&__form {
+			width: 500px;
+		}
+		&__success {
+			width: 500px;
+		}
+		&__form-header {
+			font-size: 15px;
+			letter-spacing: 2px;
+			margin-top: 30px;
+		}
+		&__date-cvc {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 30px;
+		}
+		&__form-input--smaller {
+			width: 48%;
+		}
+
+		&__date--addon {
+			display: flex;
+		}
+		&__confirm-button {
+			margin-top: 35px;
+			width: 500px;
+		}
+	}
+}
